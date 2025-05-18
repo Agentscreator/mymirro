@@ -38,6 +38,11 @@ const USERS = {
 
 export default function UserMessagePage() {
   const params = useParams()
+
+  if (!params?.userId) {
+    return <div>Missing user ID.</div>
+  }
+
   const router = useRouter()
   const userId = params.userId as string
   const [newMessage, setNewMessage] = useState("")

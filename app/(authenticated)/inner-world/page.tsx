@@ -362,7 +362,10 @@ export default function TheMirrorPage() {
                   <div className="flex items-start justify-between">
                     <div>
                       <CardTitle className="text-blue-600 dark:text-blue-400">{thought.title}</CardTitle>
-                      <CardDescription>{formatDate(thought.createdAt)}</CardDescription>
+                      <CardDescription>
+  {thought.createdAt ? formatDate(thought.createdAt) : "No date"}
+</CardDescription>
+
                     </div>
                   </div>
                 </CardHeader>

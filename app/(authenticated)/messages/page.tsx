@@ -91,19 +91,22 @@ export default function MessagesPage() {
   const handleSendMessage = () => {
     if (!newMessage.trim() && !imagePreview) return
 
-    const message = {
+const message = imagePreview
+  ? {
       id: Date.now(),
       senderId: "me",
       content: newMessage,
       timestamp: new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }),
-      image: imagePreview,
+      image: imagePreview, // string
     }
+  : {
+      id: Date.now(),
+      senderId: "me",
+      content: newMessage,
+      timestamp: new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }),
+      image: null, // null
+    };
 
-    setMessages([...messages, message])
-    setNewMessage("")
-    setImageFile(null)
-    setImagePreview(null)
-  }
 
   const handleImageChange = (file: File | null) => {
     setImageFile(file)
@@ -204,4 +207,6 @@ function MessageIcon(props: React.SVGProps<SVGSVGElement>) {
       <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
     </svg>
   )
+}
+
 }

@@ -1,20 +1,19 @@
-import type { Config } from "drizzle-kit"
-import * as dotenv from "dotenv"
+import * as dotenv from "dotenv";
 
-// Load environment variables
-dotenv.config()
+// Load environment variables from .env file
+dotenv.config();
 
-// Use a default connection string if DATABASE_URL is not set
-const connectionString = process.env.DATABASE_URL || "postgres://placeholder:placeholder@localhost:5432/placeholder"
+// Default connection string fallback
+const connectionString =
+  process.env.DATABASE_URL ||
+  "postgres://user:password@localhost:5432/mydb";
 
 export default {
-  schema: "./src/db/schema.ts",
-  out: "./drizzle/migrations",
-  driver: "pg",
+  schema: "./src/db/schema.ts",       // path to your Drizzle schema
+  out: "./drizzle/migrations",        // where to output migrations
+  driver: "pg",                       // use PostgreSQL driver
   dbCredentials: {
     connectionString,
   },
-  // Optional: Specify tables to include/exclude
-  // include: ['users', 'thoughts', 'messages', 'connections'],
-  // exclude: ['_migrations'],
-} satisfies Config
+};
+
