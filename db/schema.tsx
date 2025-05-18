@@ -63,3 +63,4 @@ export type NewMessage = typeof messages.$inferInsert
 
 export type Connection = typeof connections.$inferSelect
 export type NewConnection = typeof connections.$inferInsert
+

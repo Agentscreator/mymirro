@@ -62,3 +62,4 @@ export function ImageUpload({ onImageChange, imagePreview }: ImageUploadProps) {
     </div>
   )
 }
+

@@ -122,3 +122,4 @@ export function MemoryCard({ memory, onEdit, onDelete }: MemoryCardProps) {
     </Card>
   )
 }
+

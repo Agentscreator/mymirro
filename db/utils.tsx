@@ -143,3 +143,4 @@ export async function getTotalCharacterCount(userId: number): Promise<number> {
     return 0
   }
 }
+

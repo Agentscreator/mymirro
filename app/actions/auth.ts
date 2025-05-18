@@ -60,3 +60,4 @@ export async function logout() {
   cookies().delete("auth-token")
   return { success: true }
 }
+

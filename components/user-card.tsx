@@ -126,3 +126,4 @@ export function UserCard({ user }: UserCardProps) {
     </Card>
   )
 }
+

@@ -28,3 +28,4 @@ export function TypingAnimation({ text, speed = 30, className = "" }: TypingAnim
 
   return <span className={`${className} ${!isComplete ? "typing-animation" : ""}`}>{displayedText}</span>
 }
+
